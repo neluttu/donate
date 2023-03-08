@@ -15,8 +15,47 @@
         <div id="container">
             <div>
                 <h1>Help us do more</h1>
+                <p>
+                We'll get right to the poin: we're asking you to support us. We're a non profit that relies on support from other people like you. If everyone reading this gives $10 monthly, we can thrive for years.
+            </p>
             </div>
-            <div>Select gift frequency</div>
+            <div>
+                Select gift frequency
+                <div class="type">
+                    <span>&nbsp;</span>
+                    <div>Monthly</div>
+                    <div>One time</div>
+                </div>
+                <br>
+                Select amount in US Dollars<br><br>
+                <span class="amount">$10</span>
+                <span class="amount">$20</span>
+                <span class="amount active">$30</span>
+                <span class="amount">$40</span>
+                <span class="amount">other</span>
+                <br><br>
+                <input type="checkbox"> Yes, I'll generouslyadd $0.75 each month to cover the transaction fees.
+                <br><br>
+                Name<br>
+                <input type="text" placeholder="Enter your name">
+                <br><br>
+                <button>Donate now</button>
+            </div>
         </div>
+        <script>
+            $(".type div:first-of-type").click(function() {
+                $(".type > span").css("left", "12px");
+                $(".type > span").css("right", "");
+            });
+            $(".type div:last-of-type").click(function() { 
+                $(".type > span").css("right", "12px");
+                $(".type > span").css("left", "");
+            });
+
+            $('.amount').click(function() {
+                $('.amount').removeClass('active');
+                $(this).addClass('active');
+            });
+        </script>
     </body>
 </html>

@@ -15,6 +15,9 @@ body {
     display: flex;
     align-items: center;
 }
+*:focus {
+    outline: none;
+}
 
 * {
     box-sizing: border-box;
@@ -30,20 +33,192 @@ body {
     position: relative;
     min-height: 200px;
     color: white;
-    padding: 80px;
+    padding: 40px;
 }
 
 #container > div:first-of-type {
     float: left;
-    width: 50%;
+    max-width: 50%;
+    padding: 60px;
+}
+
+#container > div:first-of-type p {
+    max-width: 80%;
 }
 
 #container > div:last-of-type {
     float: left;
-    width: 50%;
+    max-width: 50%;
+    padding: 60px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    #container > div:first-of-type {
+        float: left;
+        max-width: 50%;
+        padding: 30px;
+    }
+    
+    #container > div:first-of-type p {
+        max-width: 80%;
+    }
+    
+    #container > div:last-of-type {
+        float: left;
+        max-width: 50%;
+        padding: 30px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+   
+}
+
+@media only screen and (max-width: 800px) {
+    #container > div:first-of-type {
+        float: left;
+        max-width: 50%;
+        padding: 10px;
+    }
+    
+    #container > div:first-of-type p {
+        max-width: 80%;
+    }
+    
+    #container > div:last-of-type {
+        float: left;
+        max-width: 50%;
+        padding: 10px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+   
+}
+
+@media only screen and (max-width: 745px) {
+    #container > div:first-of-type {
+        display: block;
+        float: none;
+        max-width: 100%;
+        padding: 10px;
+    }
+    
+    #container > div:first-of-type p {
+        max-width: 80%;
+    }
+    
+    #container > div:last-of-type {
+        display: block;
+        float: none;
+        max-width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+   
 }
 
 h1 {
     margin: 0px;
     font-weight: 500;
+}
+
+.type {
+    display: flex;
+    border-radius: 50px;
+    padding: 12px;
+    background-color: #202035;
+    position: relative;
+    overflow: hidden;
+    gap: 5px;
+    width: 300px;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: all .3s ease;
+}
+
+.type > span {
+    background-color: #2b2c46;
+    display: flex;
+    border-radius: 50px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    width: 46%;
+    text-align: center;
+    left:12;
+}
+
+.type > div {
+    flex-grow: 1;
+    width: 50%;
+    padding: 10px;
+    z-index: 10;
+    text-align: center;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.type > div:first-of-type:hover .type > span {
+    left: 0;
+}
+
+.type > div:last-of-type:hover .type > span {
+    right: 12px;
+}
+
+.amount {
+    display: inline-block;
+    padding: 10px 20px;
+    border:1px solid #202035;
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: 400;
+    margin-right: 15px;
+    transition: all .3s ease;
+    margin-bottom: 10px;
+}
+
+.amount:hover {
+    border:1px solid #202035;
+    background-color: white;
+    color: #202035;
+    cursor: pointer;
+}
+
+.amount.active {
+    border:1px solid #202035;
+    background-color: white;
+    color: #202035;
+    cursor: pointer;
+}
+
+input[type='text'] {
+    padding: 20px;
+    border: 2px solid #202035;
+    background-color: transparent;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+::placeholder {
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+button {
+    font-size: 20px;
+    padding: 16px 40px;
+    background-color: #2561eb;
+    color: white;
+    border:1px solid #2561eb;
+    border-radius: 5px;
+    letter-spacing: 0.6px;
 }
